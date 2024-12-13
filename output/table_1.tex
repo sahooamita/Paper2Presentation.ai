@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+\pagestyle{empty}
+\begin{document}
+\begin{table}
+{\scriptsize
+\centering
+\begin{tabular}{@{}lccccccccccccc@{}}
+\toprule
+Model         & Modality   & MMLU            & HellaSwag       & WinoG      & PIQA            & Arc-e           & Arc-c           & NQ              & TriviaQA        & HumanEval       & MBPP            & MATH            & GSM8K           \\ \midrule
+LLaMA 2 7B    & Pretrained & 44.4\%          & 77.1\%          & 69.5\%          & 77.9\%          & 68.7\%          & 43.2\%          & 24.7\%          & 63.8\%          & 11.6\%          & 26.1\%          & 3.9\%           & 16.0\%          \\
+LLaMA 2 13B   & Pretrained & 55.6\%          & \textbf{80.7\%} & 72.9\%          & 80.8\%          & 75.2\%          & 48.8\%          & \textbf{29.0\%} & \textbf{69.6\%} & 18.9\%          & 35.4\%          & 6.0\%           & 34.3\%          \\ \midrule
+Code-\llama 7B & Finetuned  & 36.9\%          & 62.9\%          & 62.3\%          & 72.8\%          & 59.4\%          & 34.5\%          & 11.0\%          & 34.9\%          & \textbf{31.1\%} & \textbf{52.5\%} & 5.2\%           & 20.8\%          \\ \midrule
+\mistral    & Pretrained & \textbf{60.1\%} & \textbf{81.3\%} & \textbf{75.3\%} & \textbf{83.0\%} & \textbf{80.0\%} & \textbf{55.5\%} & \textbf{28.8\%} & \textbf{69.9\%} & \textbf{30.5\%} & 47.5\%          & \textbf{13.1\%} & \textbf{52.2\%} \\ \bottomrule
+\end{tabular}
+}
+\vspace{4pt}
+\caption{\small \textbf{Comparison of \mistral with \llama.} \mistral outperforms \llama 2 13B on all metrics, and approaches the code performance of Code-\llama 7B without sacrificing performance on non-code benchmarks.}
+\label{tab:results}
+\end{table}
+\end{document}
